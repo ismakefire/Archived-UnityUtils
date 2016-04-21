@@ -31,6 +31,9 @@ namespace Popular {
 			return a;
 		}
 
+		/// <summary>
+		/// Returns a nicely formatted string for this vector.
+		/// </summary>
 		public override string ToString()
 		{
 			return string.Format("({0}, {1})", x, z);
