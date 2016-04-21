@@ -13,6 +13,11 @@ namespace Popular {
 		public int z;
 
 		/// <summary>
+		/// Shorthand for writing new IntVector2(0, 0).
+		/// </summary>
+		public static readonly IntVector2 zero = new IntVector2(0, 0);
+
+		/// <summary>
 		/// Constructs a new vector with given x, z components.
 		/// </summary>
 		public IntVector2 (int x, int z) {
@@ -24,6 +29,11 @@ namespace Popular {
 			a.x += b.x;
 			a.z += b.z;
 			return a;
+		}
+
+		public override string ToString()
+		{
+			return string.Format("({0}, {1})", x, z);
 		}
 	}
 }

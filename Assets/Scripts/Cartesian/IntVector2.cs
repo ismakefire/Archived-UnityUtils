@@ -8,9 +8,14 @@
 namespace Cartesian {
 	[System.Serializable]
 	public struct IntVector2 {
-
+		
 		public int x;
 		public int y;
+
+		/// <summary>
+		/// Shorthand for writing new IntVector2(0, 0).
+		/// </summary>
+		public static readonly IntVector2 zero = new IntVector2(0, 0);
 
 		/// <summary>
 		/// Constructs a new vector with given x, y components.
@@ -24,6 +29,11 @@ namespace Cartesian {
 			left.x += right.x;
 			left.y += right.y;
 			return left;
+		}
+
+		public override string ToString()
+		{
+			return string.Format("({0}, {1})", x, y);
 		}
 	}
 }
