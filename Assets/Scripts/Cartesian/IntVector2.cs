@@ -18,6 +18,11 @@ namespace Cartesian {
 		public static readonly IntVector2 zero = new IntVector2(0, 0);
 
 		/// <summary>
+		/// Shorthand for writing new IntVector2(1, 1).
+		/// </summary>
+		public static readonly IntVector2 one = new IntVector2(1, 1);
+
+		/// <summary>
 		/// Constructs a new vector with given x, y components.
 		/// </summary>
 		public IntVector2 (int x, int y) {
@@ -29,6 +34,52 @@ namespace Cartesian {
 			left.x += right.x;
 			left.y += right.y;
 			return left;
+		}
+
+		public static IntVector2 operator -(IntVector2 left, IntVector2 right) {
+			left.x -= right.x;
+			left.y -= right.y;
+			return left;
+		}
+
+		public static IntVector2 operator -(IntVector2 value) {
+			value.x = -value.x;
+			value.y = -value.y;
+			return value;
+		}
+
+		public static IntVector2 operator *(IntVector2 left, int rightScale) {
+			left.x *= rightScale;
+			left.y *= rightScale;
+			return left;
+		}
+
+		public static IntVector2 operator *(int leftScale, IntVector2 right) {
+			
+			// This assumes the communitative property, a * b = b * a.
+			right.x *= leftScale;
+			right.y *= leftScale;
+			return right;
+		}
+
+		public static IntVector2 operator /(IntVector2 left, int rightScale) {
+			left.x /= rightScale;
+			left.y /= rightScale;
+			return left;
+		}
+
+		public static IntVector2 operator %(IntVector2 left, int rightScale) {
+			left.x %= rightScale;
+			left.y %= rightScale;
+			return left;
+		}
+
+		public static bool operator ==(IntVector2 left, IntVector2 right) {
+			return (left.x == right.x && left.y == right.y);
+		}
+
+		public static bool operator !=(IntVector2 left, IntVector2 right) {
+			return (left.x != right.x || left.y != right.y);
 		}
 
 		/// <summary>
